@@ -1,0 +1,31 @@
+﻿@charset "UTF-8";
+/*
+ * Example of zRSSFeed Styling
+ *
+ * Version: 1.1.9
+ * (c) Copyright 2011-2012, Zazar Ltd
+ *
+ */
+
+.rssFeed {}
+.rssFeed a {color: #444;	text-decoration: none;}
+.rssFeed a:hover {color: #000;text-decoration: underline;}
+.rssHeader { padding: 0.1em 0; font-size:133%; font-weight:bold;}
+
+.rssBody {}
+
+.rssBody ul { list-style: none; }
+.rssBody ul, .rssRow, .rssRow h4, .rssRow p {margin: 0;padding: 0;}
+.rssBody ul li{clear:left; display:block;}
+
+.rssRow { padding: 0.3em; }
+.rssRow h4 { font-size: 1.1em; }
+.rssRow div {	color: #666;margin:1px;padding:1px;}
+
+.odd { background-color: #f0f0f0; }
+.even { background-color: #f8f8f8; }
+
+.rssRow .rssMedia {padding: 0.2em;font-size: 1em;}
+
+.rssRow .rssMedia div span {width:110px; height:60px; font-size: 90%; float:left; margin-right:4px;}
+.rssRow .rssMedia div span img { padding: 1px; width:auto; height:auto;}

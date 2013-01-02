@@ -14,8 +14,9 @@
 
 <!--link rel="stylesheet" href="pliki/bootstrap-combined.min.css"-->
 <link rel="stylesheet" href="pliki/idangerous.swiper.css">
+
 <style>
-body {margin:0; padding:0;}
+body {font-family:arial; font-size:15px; margin:0; padding:0; background:#222;}
 
 .swiper1, .swiper1 .swiper-slide{
 	width: 640px;
@@ -50,9 +51,10 @@ body {margin:0; padding:0;}
 }
 
 #test {background:orange;}
-.swiper-slide div {padding:2% 3%;}
+.swiper-slide div {padding:1%;}
 
 </style>
+<link rel="stylesheet" href="plugins/zrssfeed/jquery.zrssfeed.css">
 
 
 <!--link rel="stylesheet" href="pliki/style.css"-->
@@ -64,6 +66,8 @@ body {margin:0; padding:0;}
 <script  src="pliki/idangerous.swiper-1.7.js"></script>
 <!-- Swiper Scrollbar plugin -->
 <!-- Demos code -->
+<script  src="plugins/zrssfeed/jquery.zrssfeed.js"></script>
+<script  src="rssone.list.js"></script>
 
 <script>
 
@@ -112,7 +116,19 @@ body {margin:0; padding:0;}
 				$(window).resize(function() {
 				  //update stuff
 				});
-
+				
+// rssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+//console.log(rssy);
+				
+$(document).ready(function () {
+	$('#rss0').rssfeed(rssy[2][0].url,{limit:5, dateformat:'timeline'});
+	$('#rss1').rssfeed(rssy[2][1].url,{limit:5, dateformat:'timeline'});
+	$('#rss2').rssfeed(rssy[2][2].url,{limit:5, dateformat:'timeline'});
+	$('#rss3').rssfeed(rssy[2][3].url,{limit:5, dateformat:'timeline'});
+	$('#rss4').rssfeed(rssy[2][4].url,{limit:5, dateformat:'timeline'});
+	$('#rss5').rssfeed(rssy[2][5].url,{limit:5, dateformat:'timeline'});
+});
+// rssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 		
 	}
 	
@@ -141,41 +157,22 @@ body {margin:0; padding:0;}
 		
 		<div class="swiper-container swiper1">
 			<div class="swiper-wrapper">
+				
+				<!--
 				<div class="swiper-slide" id="test">  </div>
 				<div class="swiper-slide"> <img src="640.jpg"> </div>
-				
 				<div class="swiper-slide"> <img src='http://www.yr.no/place/Poland/West_Pomerania/Szczecin~7530840/avansert_meteogram.png' /> </div>
 				<div class="swiper-slide"> <img src='http://www.yr.no/place/Poland/Kuyavian-Pomerania/Bydgoszcz~3102014/avansert_meteogram.png' /> </div>
 				<div class="swiper-slide">  <img src='http://www.yr.no/place/Poland/Masovia/Warszawa~6695624/avansert_meteogram.png' /></div>
-				
-				<div class="swiper-slide"> 
-					<div>
-					<div class="content-slide">
-						<h1>Zwykły tytuł</h1>
-						<p>Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst </p>
-						<p>Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst </p>
-						<p>Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst </p>
-						<h1>Zwykły tytuł</h1>
-						<p>Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst </p>
-						<p>Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst </p>
-						<p>Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst Zwykły tekst </p>
-					</div>
-					</div>
-				</div>
+				-->
+				<div class="swiper-slide"><div><div class="content-slide" id="rss0"></div></div></div>
+				<div class="swiper-slide"><div><div class="content-slide" id="rss1"></div></div></div>
+				<div class="swiper-slide"><div><div class="content-slide" id="rss2"></div></div></div>
+				<div class="swiper-slide"><div><div class="content-slide" id="rss3"></div></div></div>
+				<div class="swiper-slide"><div><div class="content-slide" id="rss4"></div></div></div>
+				<div class="swiper-slide"><div><div class="content-slide" id="rss5"></div></div></div>
 				<div class="swiper-slide">
-				<div>
-					<div class="content-slide">
-						<h2 style="margin-top: 0;">Slide with HTML</h2>
-						<p>You can put any HTML inside of slide with any layout, not only images, even another Swiper!</p>
-					</div>
-					<div class="content-slide cs-1">
-					
-						<p style="margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consectetur tortor vitae neque luctus a tempor lacus pretium. Mauris eget ligula at justo molestie cursus. In vitae sem id neque pharetra luctus non vel felis.</p>
-					</div>
-					<div class="content-slide cs-2">
-						<p style="margin: 0;">Aliquam ut laoreet ligula. Quisque vehicula lectus nec orci viverra porttitor. Donec sodales lectus sit amet nunc congue ut mattis augue rhoncus.</p>
-					</div>
-				</div>				
+	
 					<div class="clearfix"></div>
 				</div>
 			</div>
