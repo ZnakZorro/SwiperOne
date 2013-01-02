@@ -18,8 +18,8 @@
 body {margin:0; padding:0;}
 
 .swiper1, .swiper1 .swiper-slide{
-	width: 1024px;
-	height: 640px;
+	width: 640px;
+	height: 400px;
 	margin:0; padding:0;
 }
 .swiper-slide img {width:100%; height:auto; max-height:100%;}
@@ -64,9 +64,74 @@ body {margin:0; padding:0;}
 <script  src="pliki/idangerous.swiper-1.7.js"></script>
 <!-- Swiper Scrollbar plugin -->
 <!-- Demos code -->
+
+<script>
+
+
+   function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+		onDeviceReady();	
+		
+
+	}
+	
+	function onDeviceReady() {
+		document.addEventListener("backbutton", onBackKeyDown, false);
+		document.addEventListener("menubutton", onMenuKeyDown, false);		
+
+				var w1=$('.swiper1').css('width');
+				var h1=$('.swiper1').css('height');
+
+
+
+				var ww=$(document).width();
+				var hh=$(document).height();
+
+				$('#test').html('<div><h1>Width='+ww+'px <br /> Height='+hh+'px<br /><br /><br />'+w1+'  '+h1+'</h1></div>');
+
+				$('.swiper-slide').css({'width':ww,'height':hh});
+				$('.swiper1').css({'width':ww,'height':hh});
+
+
+				$(function(){
+				  
+					//Main Swiper
+					swiper = new Swiper('.swiper1', {
+						pagination : '.pagination1',ww:ww,hh:hh
+					});
+					$('.arrow-left').click(function(e) {
+						e.preventDefault()
+						swiper.swipePrev()
+					});
+					$('.arrow-right').click(function(e) {
+						e.preventDefault()
+						swiper.swipeNext()
+					});
+				})
+
+				$(window).resize(function() {
+				  //update stuff
+				});
+
+		
+	}
+	
+	
+	function onBackKeyDown() {
+    }
+	
+	function onMenuKeyDown() {
+    }		
+	
+	
+</script>	
+
+
+
+
 </head>
 
-<body>
+<body onload="onLoad()">
 
 <div class="container-fluid">
   
@@ -78,11 +143,11 @@ body {margin:0; padding:0;}
 			<div class="swiper-wrapper">
 				<div class="swiper-slide" id="test">  </div>
 				<div class="swiper-slide"> <img src="640.jpg"> </div>
-				<!--
+				
 				<div class="swiper-slide"> <img src='http://www.yr.no/place/Poland/West_Pomerania/Szczecin~7530840/avansert_meteogram.png' /> </div>
 				<div class="swiper-slide"> <img src='http://www.yr.no/place/Poland/Kuyavian-Pomerania/Bydgoszcz~3102014/avansert_meteogram.png' /> </div>
 				<div class="swiper-slide">  <img src='http://www.yr.no/place/Poland/Masovia/Warszawa~6695624/avansert_meteogram.png' /></div>
-				-->
+				
 				<div class="swiper-slide"> 
 					<div>
 					<div class="content-slide">
@@ -126,41 +191,6 @@ body {margin:0; padding:0;}
 
 
 <script>
-var w1=$('.swiper1').css('width');
-var h1=$('.swiper1').css('height');
-
-
-
-var ww=$(document).width();
-var hh=$(document).height();
-
-//$('#test').css({'border':'solid','padding':'20px','background':'yellow'});
-$('#test').css({'background':'yellow'});
-$('#test').html('<div><h1>Width='+ww+'px <br /> Height='+hh+'px<br /><br /><br />'+w1+'  '+h1+'</h1></div>');
-
-$('.swiper-slide').css({'width':ww,'height':hh});
-$('.swiper1').css({'width':ww,'height':hh});
-
-
-$(function(){
-  
-	//Main Swiper
-	swiper = new Swiper('.swiper1', {
-		pagination : '.pagination1',ww:ww,hh:hh
-	});
-	$('.arrow-left').click(function(e) {
-        e.preventDefault()
-		swiper.swipePrev()
-    });
-	$('.arrow-right').click(function(e) {
-        e.preventDefault()
-		swiper.swipeNext()
-    });
-})
-
-$(window).resize(function() {
-  //update stuff
-});
 
 </script>
 
