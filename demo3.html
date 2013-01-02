@@ -14,52 +14,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<!--link rel="stylesheet" href="pliki/bootstrap-combined.min.css"-->
+<link rel="stylesheet" href="pliki/bootstrap-combined.min.css">
 <link rel="stylesheet" href="pliki/idangerous.swiper.css">
-<style>
-body {margin:0; padding:0;}
-
-.swiper1, .swiper1 .swiper-slide{
-	width: 800px;
-	height: 480px;
-	margin:0; padding:0;
-}
-.swiper-slide img {width:100%; height:auto; max-height:100%;}
-
-.content-slide {
-	background: #fff;
-	padding: 2%;
-	margin:2%;
-	border-radius: 5px;
-	border:1px solid gray;
-}
-.cs-1, .cs-2 {
-	padding: 2%;
-	margin: 2%;
-	float: left;
-	width:41%;
-}
-.cs-1 {
-	background: #333;
-	color: #fff;
-}
-.cs-2 {
-	background: #ad2e4c;
-	color: #fff;
-}
-
-</style>
-
-
-<!--link rel="stylesheet" href="pliki/style.css"-->
-
-<script  src="phonegap.js"></script>
+<link rel="stylesheet" href="pliki/style.css">
 
 <script  src="pliki/jquery.min.js"></script>
 <!-- Swiper -->
-<script  src="pliki/idangerous.swiper-1.7.js"></script>
+<script  src="pliki/idangerous.swiper-1.7.min.js"></script>
 <!-- Swiper Scrollbar plugin -->
 <!-- Demos code -->
+<script>
+
+$(function(){
+  
+	//Main Swiper
+	swiper = new Swiper('.swiper1', {
+		pagination : '.pagination1'
+	});
+	$('.arrow-left').click(function(e) {
+        e.preventDefault()
+		swiper.swipePrev()
+    });
+	$('.arrow-right').click(function(e) {
+        e.preventDefault()
+		swiper.swipeNext()
+    });
+})
+
+</script>
 </head>
 
 <body>
@@ -70,12 +52,11 @@ body {margin:0; padding:0;}
 	<div class="row-fluid"> 
 		<a class="arrow-left" href="#"></a> 
 		<a class="arrow-right" href="#"></a>
-		
+
 		<div class="swiper-container swiper1">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide"> <img src='http://www.yr.no/place/Poland/West_Pomerania/Szczecin~7530840/avansert_meteogram.png' /> </div>
-				<div class="swiper-slide"> <img src='http://www.yr.no/place/Poland/Kuyavian-Pomerania/Bydgoszcz~3102014/avansert_meteogram.png' /> </div>
-				<div class="swiper-slide">  <img src='http://www.yr.no/place/Poland/Masovia/Warszawa~6695624/avansert_meteogram.png' /></div>
+				<div class="swiper-slide"> <img src="img/slider1-1.png"> </div>
+				<div class="swiper-slide"> <img src="img/slider1-2.png"> </div>
 				<div class="swiper-slide"> <img src="https://lh5.googleusercontent.com/-bvuczWVfRd0/UJYuLr3k88I/AAAAAAAAJEY/wSka0ULUqEY/s640/Dabie_Burnkry_Oficerska_2012-001.jpg.40.jpg"> </div>
 				<div class="swiper-slide"> 
 					<div class="content-slide">
@@ -109,36 +90,6 @@ body {margin:0; padding:0;}
 <footer style="display:none;">
   <p style="text-align: center;">2012-2013 &copy; Swiper by <a href="http://www.idangero.us/">iDangero.us</a></p>
 </footer>
-
-
-<script>
-var ww=$(document).width();
-var hh=$(document).height();
-
-console.log(ww+' '+hh);
-
-$('.swiper-slide').css({'width':ww,'height':hh});
-$('.swiper1').css({'width':ww,'height':hh});
-
-
-$(function(){
-  
-	//Main Swiper
-	swiper = new Swiper('.swiper1', {
-		pagination : '.pagination1',ww:ww,hh:hh
-	});
-	$('.arrow-left').click(function(e) {
-        e.preventDefault()
-		swiper.swipePrev()
-    });
-	$('.arrow-right').click(function(e) {
-        e.preventDefault()
-		swiper.swipeNext()
-    });
-})
-
-</script>
-
 
 </body>
 </html>

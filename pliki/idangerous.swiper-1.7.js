@@ -11,7 +11,7 @@
  * Updated on: December 19, 2012
 */
 Swiper = function(selector, params, callback) {
-	
+
 	/*=========================
 	  A little bit dirty but required part for IE8 and old FF support
 	  ===========================*/
@@ -111,6 +111,7 @@ Swiper = function(selector, params, callback) {
 		}
 	}
 	_this.params = params;
+
 	if (params.scrollContainer) {
 		params.freeMode = true;
 		params.freeModeFluid = true;	
@@ -193,9 +194,12 @@ Swiper = function(selector, params, callback) {
 	var firstInit = false;
 
 	_this.init = function() {
-		var newWidth = parseInt(window.getComputedStyle(_this.container, null).getPropertyValue('width'),10);
-		var newHeight  = parseInt(window.getComputedStyle(_this.container, null).getPropertyValue('height'),10);
-		
+	
+		//var newWidth = parseInt(window.getComputedStyle(_this.container, null).getPropertyValue('width'),10);
+		//var newHeight  = parseInt(window.getComputedStyle(_this.container, null).getPropertyValue('height'),10);
+		var newWidth = params.ww;
+		var newHeight  = params.hh;
+//console.log(newWidth);
 
 		//IE8 Fix
 		if(isNaN(newWidth)) {
